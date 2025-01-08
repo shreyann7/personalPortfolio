@@ -1,0 +1,76 @@
+<!-- ---
+import ExperienceItem from './ExperienceItem.astro';
+
+const EXPERIENCIE = [
+	{
+		date: '9 Months | Airchains',
+		title: 'Blockchain Developer Intern',
+		description:
+			"Fueled by curiosity and a passion for innovation, I dived into the future of blockchain scalability with Airchains. My journey included crafting a blazing-fast Sequencer for Modular Zero-Knowledge Rollups using Golang, orchestrating cutting-edge zero-knowledge proof circuits with Circom, and powering Ethereum's Layer 2 scaling solutions with a sleek, developer-friendly Rollup SDK. Whether wrangling PostgreSQL or spinning up scalable systems in Node.js, every line of code echoed my dedication to shaping decentralized tech. \n\n Tech Arsenal: Golang, Circom, Node.js, PostgreSQL, MongoDB, Snark.js, JavaScript "
+			
+	}
+];
+---
+
+<ol class="relative mt-16">
+	{
+		EXPERIENCIE.map((experiencie) => (
+			<li class="">
+				<ExperienceItem {...experiencie} />
+			</li>
+		))
+	}
+</ol> -->
+
+
+
+
+
+
+
+---
+import ExperienceItem from './ExperienceItem.astro';
+
+const EXPERIENCIE = [
+	{
+		date: '9 Months | Airchains',
+		title: 'Blockchain Developer Intern',
+		description: `
+			Fueled by curiosity and a passion for innovation, I dived into the future of blockchain scalability with Airchains
+			My journey included crafting a Sequencer for Modular Zero-Knowledge Rollups using Golang, 
+			using cutting-edge zero-knowledge proof circuits with Circom, and powering 
+			Ethereum's Layer 2 scaling solutions with a sleek, developer-friendly Rollup SDK. 
+			Whether wrangling PostgreSQL or spinning up scalable systems in Node.js, every line of code echoed my dedication to shaping decentralized tech.
+		`,
+		techStack: [
+			'Golang',
+			'Circom',
+			'Node.js',
+			'PostgreSQL',
+			'MongoDB',
+			'Snark.js',
+			'JavaScript'
+		]
+	}
+];
+---
+
+<ol class="relative mt-16">
+	{
+		EXPERIENCIE.map((experience) => (
+			<li class="mb-12">
+				<ExperienceItem 
+					date={experience.date}
+					title={experience.title}
+					description={experience.description}
+				/>
+				<div class="mt-4 bg-gradient-to-r from-purple-800 via-black to-purple-800 text-gray-100 px-6 py-3 rounded-md shadow-lg font-mono tracking-wide">
+					<strong class="text-indigo-400">Tech Arsenal:</strong> 
+					<span class="text-gray-200">
+						{experience.techStack.join(', ')}
+					</span>
+				</div>
+			</li>
+		))
+	}
+</ol>
